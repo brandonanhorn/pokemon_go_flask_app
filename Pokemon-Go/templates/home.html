@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Pokemon-GO</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="static/css/roboto-font.css">
+	<link rel="stylesheet" type="text/css" href="static/fonts/line-awesome/css/line-awesome.min.css">
+
+
+	<link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
+
+  <link rel="stylesheet" href="static/css/style.css"/>
+  <link rel="icon" href="static/images/poke.png">
+
+
+</head>
+<body class="form-v2">
+
+	<div class="page-content" id="rts">
+		<div class="form-v2-content">
+			<div class="form-left">
+				<img src="static/images/poke.jpg" alt="Pokemon" width='350px;' height='100%;'>
+
+			</div>
+			<form class="form-detail" action="/predictions" method="post" id="myform">
+				<h2>Enter Details:</h2>
+				<div class="form-row">
+					<label for="default">Enter City:</label>
+					<!--<input type="text" name="full_name" id="full_name" class="input-text" placeholder="ex: Lindsey Wilson">
+            -->
+          <input type="text" name="city" list="city_list" placeholder="e.g. Toronto" id="city">
+          <datalist id="city_list">
+            <option value="Toronto">
+            <option value="Edmonton">
+            <option value="Vancouver">
+            <option value="Chicago">
+            <option value="Los_Angeles">
+            <option value="New_York">
+            <option value="Denver">
+            <option value="Phoenix">
+            <option value="Regina">
+            <option value="Indianapolis">
+            <option value="Winnipeg">
+            <option value="Detroit">
+            <option value="Montreal">
+            <option value="Halifax">
+
+          </<datalist>
+
+        </div>
+        <p id='disp' class='inval'></p>
+        <br />
+        <br />
+        <div class="form-row">
+					<label for="default">Select Pokemon:</label>
+					<!--<input type="text" name="full_name" id="full_name" class="input-text" placeholder="ex: Lindsey Wilson">
+            -->
+          <input type="text" name="pokemon" list="poke_list" placeholder="Please select city first" disabled=true id='poke'>
+          <datalist id="poke_list">
+
+          </datalist>
+        </div>
+
+        <br />
+				<div class="form-row-last">
+					<input type="submit" name="register" class="register" value="Submit" onclick="return loader();">
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class='loader' id="rts2">
+		<img src="https://media.giphy.com/media/Gm7LdndVpiCs0/giphy.gif" width='100%;' height='100%;'></img>
+	</div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src='static/js/dropdown.js'></script>
+  <script type="text/javascript">
+		function loader(){
+			document.getElementById("rts").style.display="none";
+			document.getElementById("rts2").style.visibility="visible";
+		}
+    //console.log(document.querySelector('input'));
+
+  </script>
+
+
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+
+</body>
+</html>
